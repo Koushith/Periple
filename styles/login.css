@@ -1,7 +1,31 @@
-.wrapper{
-    background: #2b2b2b;
+
+body .wrapper{
+    width: 500px;
+}
+body{
+    background: #ffffff;
 }
 
-body{
-    background: #2b2b2b;
+.inside-container{
+    display: flex;
+    flex-direction: column;
+}
+
+.right-img{
+    position: absolute;
+width: 803px;
+height: 618px;
+left: 608px;
+top: 133px;
+}
+
+
+.left-form{
+    position: absolute;
+width: 550px;
+height: 686px;
+left: 58px;
+top: 95px;
+
+
 }
