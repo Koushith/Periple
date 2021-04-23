@@ -15,7 +15,7 @@ function Header() {
     <>
       <header>
         <Navbar bg='dark' variant='dark' expand='lg' collapseOnSelect>
-          {/* <Container>
+          <Container>
             <LinkContainer to='/'>
               <Navbar.Brand>Periple</Navbar.Brand>
             </LinkContainer>
@@ -23,20 +23,18 @@ function Header() {
             <Navbar.Toggle aria-controls='basic-navbar-nav' />
             <Navbar.Collapse id='basic-navbar-nav'>
               <Nav className='ml-auto'>
-                <LinkContainer to='/cart'>
-                  <Nav.Link>
-                    <i className='fas fa-shopping-cart'></i> Cart
-                  </Nav.Link>
+                <LinkContainer to='/addpost'>
+                  <Nav.Link>Add Post</Nav.Link>
                 </LinkContainer>
-
-                <LinkContainer to='/login'>
-                  <Nav.Link>
-                    <i className='fas fa-user'></i>Sign In
-                  </Nav.Link>
+                <LinkContainer to='/featurerequest'>
+                  <Nav.Link>Feature Request</Nav.Link>
+                </LinkContainer>
+                <LinkContainer to='/profile'>
+                  <Nav.Link>Profile</Nav.Link>
                 </LinkContainer>
               </Nav>
             </Navbar.Collapse>
-          </Container> */}
+          </Container>
         </Navbar>
       </header>
     </>

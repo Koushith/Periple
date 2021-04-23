@@ -1,7 +1,8 @@
 import React from 'react';
+import AllPosts from '../AllPosts';
 
 function HomeScreen() {
-  return <div>Home Screen</div>;
+  return <AllPosts />;
 }
 
 export default HomeScreen;

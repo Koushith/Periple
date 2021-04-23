@@ -10,7 +10,7 @@ const posts = [
     mood: 'happy',
   },
   {
-    title: 'A day to be remembered',
+    title: 'Test Data',
     publishedAt: new Date().toDateString(),
     image: '/images/airpods.jpg',
     body:
@@ -20,7 +20,7 @@ const posts = [
     mood: 'happy',
   },
   {
-    title: 'A day to be remembered',
+    title: 'Nice to meet you',
     publishedAt: new Date().toDateString(),
     image: '/images/airpods.jpg',
     body:
@@ -30,7 +30,7 @@ const posts = [
     mood: 'happy',
   },
   {
-    title: 'A day to be remembered',
+    title: 'Happy Birthday',
     publishedAt: new Date().toDateString(),
     image: '/images/airpods.jpg',
     body:
