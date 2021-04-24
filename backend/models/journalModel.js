@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 
-const postSchema = mongoose.Schema(
+const journalSchema = mongoose.Schema(
   {
     title: {
       type: String,
@@ -28,6 +28,6 @@ const postSchema = mongoose.Schema(
   }
 );
 
-const Posts = mongoose.model('Posts', postSchema);
+const Journals = mongoose.model('Journals', journalSchema);
 
-export default Posts;
+export default Journals;

@@ -4,7 +4,7 @@ import User from './models/userModel.js';
 import connectDB from './config/db.js';
 import userData from './data/userData.js';
 import posts from './data/posts.js';
-import Posts from './models/postModel.js';
+import Journals from './models/journalModel.js';
 
 connectDB();
 
@@ -15,7 +15,7 @@ const importData = async () => {
 
     await User.insertMany(userData);
 
-    await Posts.insertMany(posts);
+    await Journals.insertMany(posts);
 
     console.log('Data imported!!');
 
@@ -30,7 +30,7 @@ const importData = async () => {
 const destroyData = async () => {
   try {
     // await User.deleteMany();
-    await Posts.deleteMany();
+    await Journals.deleteMany();
   } catch (err) {
     console.log(err);
 

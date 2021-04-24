@@ -1,6 +1,6 @@
 import express from 'express';
 import asyncHandler from 'express-async-handler';
-import Posts from '../models/postModel.js';
+import Journals from '../models/journalModel.js';
 
 const router = express.Router();
 
@@ -11,7 +11,7 @@ const router = express.Router();
 router.get(
   '/',
   asyncHandler(async (req, res) => {
-    const allPosts = await Posts.find({});
+    const allPosts = await Journals.find({});
     res.json(allPosts);
   })
 );
@@ -24,7 +24,7 @@ router.get(
   '/:id',
   asyncHandler(async (req, res) => {
     const postId = req.params.id;
-    const singlePost = await Posts.findById(postId);
+    const singlePost = await Journals.findById(postId);
 
     if (singlePost) {
       res.json(singlePost);
