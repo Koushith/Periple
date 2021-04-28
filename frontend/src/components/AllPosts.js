@@ -10,7 +10,7 @@ function AllPosts() {
   useEffect(() => {
     setLoader(true);
     const fetchJournal = async () => {
-      const { data } = await axios.get('/api/posts');
+      const { data } = await axios.get('/api/journal');
       if (data) {
         setJournals(data);
         setLoader(false);

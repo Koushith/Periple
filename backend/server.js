@@ -1,7 +1,8 @@
 // const express = require('express');
-import express from 'express';
+import express, { json } from 'express';
 import connectDB from './config/db.js';
 import JournalRoutes from './routes/journalRoutes.js';
+import userRoutes from './routes/userRoutes.js';
 import { notFound, errorHandler } from './middlewares/errorMiddleware.js';
 
 const app = express();
@@ -12,7 +13,11 @@ app.get('/', (req, res) => {
   res.send('server is running');
 });
 
+app.use(express.json());
+
 app.use('/api/journal', JournalRoutes);
+
+app.use('/api/users', userRoutes);
 
 // custom middlewares
 app.use(notFound);
