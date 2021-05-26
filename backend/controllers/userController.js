@@ -84,12 +84,12 @@ const authUser = asyncHandler(async (req, res) => {
   }
 });
 
-// @desc   Create new user
+// @desc   get user profile
 // @route   GET /api/users/profile
 // @access  Private
 
 const getProfile = asyncHandler(async (req, res) => {
-  const user = await User.findById(req.user._id); // this is from missleware
+  const user = await User.findById(req.user._id); // this is from missleware- we ag=have set the payload in req object
 
   if (user) {
     res.json({
@@ -102,6 +102,19 @@ const getProfile = asyncHandler(async (req, res) => {
     throw new Error('User not found');
   }
 });
+
+// @desc  update
+// @route   PUT /api/users/profile
+// @access  Private
+
+const updateProfie = async (req, res) => {
+  try {
+  } catch (error) {
+    res.status(404).json({
+      message: "something went wrong, couldn't update",
+    });
+  }
+};
 
 // @desc    Get all users
 // @route   GET /api/users
