@@ -5,7 +5,7 @@ import {
 } from '../constants/journalConstants';
 
 // we know that this will be an array
-export const fetchJournalReducer = (state = { journals: [] }, action) => {
+export const fetchJournalReducer = (state = {}, action) => {
   switch (action.type) {
     case JOURNAL_LISTS_REQUEST:
       return { loading: true };
