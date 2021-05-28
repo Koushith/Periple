@@ -1,36 +1,49 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import { useSelector, useDispatch } from 'react-redux';
+import { fetchJournals } from '../redux/actions/journalActions';
+import Message from '../components/Message';
+import Loader from '../components/Loader';
 
 function AllPosts() {
-  const [journals, setJournals] = useState({});
-  const [loader, setLoader] = useState(false);
+  const dispatch = useDispatch();
 
-  console.log('Title', journals);
+  const journalsList = useSelector((state) => state.allJournals);
 
+  const { loading, allJournals, error } = journalsList;
+  console.log('ALL', allJournals, loading);
   useEffect(() => {
-    setLoader(true);
-    const fetchJournal = async () => {
-      const { data } = await axios.get('/api/posts');
-      if (data) {
-        setJournals(data);
-        setLoader(false);
-      }
-    };
-
-    fetchJournal();
-  }, []);
+    dispatch(fetchJournals());
+  }, [dispatch]);
 
   return (
-    <div>
-      {loader ? <h1>Loading</h1> : ' No Post Found'}
-      {journals.length > 0 &&
-        journals.map((journal) => (
-          <div key={journal.id}>
-            <h1 key={journal.id}>{journal.title}</h1>
-            <span key={journal.id}>{journal.publishedAt}</span>
-          </div>
-        ))}
-    </div>
+    // <div>
+    //   {allJournals == undefined
+    //     ? 'loadiing'
+    //     : allJournals.map((journal) => (
+    //         <div key={journal.id}>
+    //           <h1 key={journal.id}>{journal.title}</h1>
+    //           <span key={journal.id}>{journal.publishedAt}</span>
+    //         </div>
+    //       ))}
+    // </div>
+    <>
+      <h1>Latest Posts</h1>
+      {loading ? (
+        <Loader />
+      ) : error ? (
+        <Message variant='danger'>{error}</Message>
+      ) : (
+        <>
+          {allJournals !== undefined &&
+            allJournals.map((journal) => (
+              <div key={journal._id}>
+                <h1>{journal.title}</h1>
+                <span>{journal.publishedAt}</span>{' '}
+              </div>
+            ))}
+        </>
+      )}
+    </>
   );
 }
 

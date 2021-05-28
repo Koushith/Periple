@@ -1,6 +1,8 @@
 import express from 'express';
-import asyncHandler from 'express-async-handler';
-import Journals from '../models/journalModel.js';
+import {
+  getAlljournal,
+  getSingleJournal,
+} from '../controllers/journalController.js';
 
 const router = express.Router();
 
@@ -8,30 +10,12 @@ const router = express.Router();
 //  @route GET /api/posts
 //  @access Private
 
-router.get(
-  '/',
-  asyncHandler(async (req, res) => {
-    const allPosts = await Journals.find({});
-    res.json(allPosts);
-  })
-);
+router.get('/', getAlljournal);
 
 // @desc Fetch single post
 //  @route GET /api/posts/:id
 //  @access Private
 
-router.get(
-  '/:id',
-  asyncHandler(async (req, res) => {
-    const postId = req.params.id;
-    const singlePost = await Journals.findById(postId);
-
-    if (singlePost) {
-      res.json(singlePost);
-    } else {
-      res.status(404).json({ message: 'Post Not found' });
-    }
-  })
-);
+router.get('/:id', getSingleJournal);
 
 export default router;

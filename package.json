@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "A personal Journaling app",
   "main": "server.js",
-   "type": "module",
+  "type": "module",
   "scripts": {
     "start": "node backend/server",
     "server": "nodemon backend/server",
@@ -27,6 +27,7 @@
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "express-async-handler": "^1.1.4",
+    "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.12.3"
   },
   "devDependencies": {
