@@ -9,6 +9,8 @@ import ViewPost from './components/screens/ViewPost';
 
 import Header from './components/Header';
 import Footer from './components/Footer';
+import LoginScreen from './components/screens/LoginScreen';
+import RegisterScreen from './components/screens/RegisterScreen';
 
 function App() {
   return (
@@ -21,6 +23,8 @@ function App() {
           <Route path='/featurerequest' exact component={FeatureRequest} />
           <Route path='/profile' exact component={ProfileScreen} />
           <Route path='/post/:id' exact component={ViewPost} />
+          <Route path='/login' exact component={LoginScreen} />
+          <Route path='/register' exact component={RegisterScreen} />
         </Container>
       </main>
       <Footer />
