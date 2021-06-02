@@ -2,7 +2,12 @@ import { createStore, combineReducers, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import { fetchJournalReducer } from './reducers/journalReducers';
-import { loginReducer, userRegisterReducer } from './reducers/userReducers';
+import {
+  loginReducer,
+  userRegisterReducer,
+  userDetailsReducer,
+  userUpdateProfileReducer,
+} from './reducers/userReducers';
 
 /**
  *  combines different reducers and pass it to the store
@@ -11,6 +16,8 @@ const reducer = combineReducers({
   allJournals: fetchJournalReducer,
   userLogin: loginReducer,
   userRegister: userRegisterReducer,
+  userDetails: userDetailsReducer,
+  userUpdateProfile: userUpdateProfileReducer,
 });
 
 /**

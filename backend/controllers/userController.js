@@ -41,30 +41,6 @@ const registerUser = asyncHandler(async (req, res) => {
 // @route   POST /api/users/login
 // @access  Public
 
-// const authUser = asyncHandler(async (req, res) => {
-//   // get the username, password- from req.body object
-//   const { email, password } = req.body;
-
-//   console.log(email, password);
-
-//   const user = await User.findOne({ email });
-
-//   // check if exist - if exist check for the password. if password matches send the details along with the token
-
-//   if (user && (await user.matchPassword(password))) {
-//     res.json({
-//       _id: user._id,
-//       name: user.name,
-//       email: user.email,
-//       isAdmin: user.isAdmin,
-//       token: generateToken(user._id),
-//     });
-//   } else {
-//     res.status(401);
-//     throw new Error('Invalid email or password');
-//   }
-// });
-
 const authUser = asyncHandler(async (req, res) => {
   const { email, password } = req.body;
 
@@ -107,14 +83,32 @@ const getProfile = asyncHandler(async (req, res) => {
 // @route   PUT /api/users/profile
 // @access  Private
 
-const updateProfie = async (req, res) => {
-  try {
-  } catch (error) {
-    res.status(404).json({
-      message: "something went wrong, couldn't update",
+const updateUserProfile = asyncHandler(async (req, res) => {
+  // get the id from decoded - loggedin user
+  let user = await User.findById(req.user._id);
+
+  if (user) {
+    // set to what ever comes from form or levae it as it is.
+    user.name = req.body.name || user.name;
+    user.email = req.body.email || user.email;
+    if (req.body.password) {
+      user.password = req.body.password;
+    }
+
+    const updatedUser = await user.save();
+
+    res.json({
+      _id: updatedUser._id,
+      name: updatedUser.name,
+      email: updatedUser.email,
+      isAdmin: updatedUser.isAdmin,
+      token: generateToken(updatedUser._id),
     });
+  } else {
+    res.status(404);
+    throw new Error('user not found');
   }
-};
+});
 
 // @desc    Get all users
 // @route   GET /api/users
@@ -125,4 +119,4 @@ const getAllUsers = asyncHandler(async (req, res) => {
   res.json(allUsers);
 });
 
-export { getProfile, registerUser, getAllUsers, authUser };
+export { getProfile, registerUser, getAllUsers, authUser, updateUserProfile };
