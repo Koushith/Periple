@@ -4,6 +4,7 @@ import connectDB from './config/db.js';
 import JournalRoutes from './routes/journalRoutes.js';
 import userRoutes from './routes/userRoutes.js';
 import { notFound, errorHandler } from './middlewares/errorMiddleware.js';
+import { Protected } from './middlewares/authMiddlware.js';
 
 const app = express();
 
