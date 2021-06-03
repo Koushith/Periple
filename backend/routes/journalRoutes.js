@@ -3,6 +3,7 @@ import {
   getAlljournal,
   getSingleJournal,
 } from '../controllers/journalController.js';
+import { Protected } from '../middlewares/authMiddlware.js';
 
 const router = express.Router();
 
@@ -10,7 +11,7 @@ const router = express.Router();
 //  @route GET /api/posts
 //  @access Private
 
-router.get('/', getAlljournal);
+router.get('/', Protected, getAlljournal);
 
 // @desc Fetch single post
 //  @route GET /api/posts/:id

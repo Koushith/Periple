@@ -29,8 +29,6 @@ function LoginScreen({ history, location }) {
     }
   }, [history, userInfo, redirect]);
 
-  console.log('userinfo from login', userInfo);
-
   const submitHandler = (e) => {
     e.preventDefault();
     dispatch(login(email, password));

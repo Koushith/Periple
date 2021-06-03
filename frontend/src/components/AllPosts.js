@@ -16,16 +16,6 @@ function AllPosts() {
   }, [dispatch]);
 
   return (
-    // <div>
-    //   {allJournals == undefined
-    //     ? 'loadiing'
-    //     : allJournals.map((journal) => (
-    //         <div key={journal.id}>
-    //           <h1 key={journal.id}>{journal.title}</h1>
-    //           <span key={journal.id}>{journal.publishedAt}</span>
-    //         </div>
-    //       ))}
-    // </div>
     <>
       <h1>Latest Posts</h1>
       {loading ? (

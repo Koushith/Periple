@@ -1,6 +1,6 @@
 import React from 'react';
 
-function AddPosts() {
+function AddPosts(props) {
   return <div>add posts</div>;
 }
 
