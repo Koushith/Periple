@@ -1,13 +1,5 @@
 import React from 'react';
-import {
-  Navbar,
-  Nav,
-  Container,
-  NavDropdown,
-  Form,
-  Button,
-  FormControl,
-} from 'react-bootstrap';
+import { Navbar, Nav, Container, NavDropdown, Form, Button, FormControl } from 'react-bootstrap';
 
 import { useDispatch, useSelector } from 'react-redux';
 import { LinkContainer } from 'react-router-bootstrap';
@@ -43,15 +35,13 @@ function Header() {
                     </LinkContainer>
 
                     <LinkContainer to='/addpost'>
-                      <NavDropdown.Item>Add Post</NavDropdown.Item>
+                      <NavDropdown.Item>About</NavDropdown.Item>
                     </LinkContainer>
                     <LinkContainer to='/featurerequest'>
                       <NavDropdown.Item>Feature Request</NavDropdown.Item>
                     </LinkContainer>
 
-                    <NavDropdown.Item onClick={logoutHandler}>
-                      Logout
-                    </NavDropdown.Item>
+                    <NavDropdown.Item onClick={logoutHandler}>Logout</NavDropdown.Item>
                   </NavDropdown>
                 ) : (
                   <LinkContainer to='/login'>

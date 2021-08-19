@@ -23,12 +23,22 @@
   },
   "homepage": "https://github.com/Koushith/Periple#readme",
   "dependencies": {
+    "@material-ui/core": "^4.11.4",
+    "@material-ui/icons": "^4.11.2",
+    "@material-ui/styles": "^4.11.4",
+    "@react-page/editor": "^2.4.0",
+    "@react-page/plugins-slate": "^2.4.0",
+    "@tiptap/core": "^2.0.0-beta.99",
+    "@tiptap/react": "^2.0.0-beta.60",
+    "@tiptap/starter-kit": "^2.0.0-beta.97",
     "bcryptjs": "^2.4.3",
     "dotenv": "^8.2.0",
+    "draft-js": "^0.11.7",
     "express": "^4.17.1",
     "express-async-handler": "^1.1.4",
     "jsonwebtoken": "^8.5.1",
-    "mongoose": "^5.12.3"
+    "mongoose": "^5.12.3",
+    "react-draft-wysiwyg": "^1.14.7"
   },
   "devDependencies": {
     "concurrently": "^6.0.2",
