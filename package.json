@@ -1,7 +1,7 @@
 {
-  "name": "periple",
+  "name": "docshare",
   "version": "1.0.0",
-  "description": "A personal Journaling app",
+  "description": "share ppts without any hassel",
   "main": "server.js",
   "type": "module",
   "scripts": {
@@ -23,15 +23,19 @@
   },
   "homepage": "https://github.com/Koushith/Periple#readme",
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.1.1",
+    "@fortawesome/free-solid-svg-icons": "^6.1.1",
+    "@fortawesome/react-fontawesome": "^0.1.18",
     "bcryptjs": "^2.4.3",
-    "dotenv": "^8.2.0",
-    "express": "^4.17.1",
-    "express-async-handler": "^1.1.4",
+    "cors": "^2.8.5",
+    "dotenv": "^15.0.0",
+    "express": "^4.17.2",
+    "express-async-handler": "^1.2.0",
     "jsonwebtoken": "^8.5.1",
-    "mongoose": "^5.12.3"
+    "mongoose": "^6.1.9"
   },
   "devDependencies": {
-    "concurrently": "^6.0.2",
-    "nodemon": "^2.0.7"
+    "concurrently": "^7.0.0",
+    "nodemon": "^2.0.15"
   }
 }
